@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "bookask: index",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "bookask.bookask",
+            "args": ["--book", "${workspaceFolder}/data/yellow_wallpaper.txt", "--index"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "bookask: raw agent",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "bookask.bookagent_raw",
+            "args": ["--book", "${workspaceFolder}/data/yellow_wallpaper.txt", "--ask", "What does the narrator think of the wallpaper at the start of the story?"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "bookask: langgraph agent",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "bookask.bookagent_langchain_langgraph",
+            "args": ["--book", "${workspaceFolder}/data/yellow_wallpaper.txt", "--ask", "What does the narrator think of the wallpaper at the start of the story?"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "evals: run all",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "evals.run_evals",
+            "args": ["--book", "${workspaceFolder}/data/yellow_wallpaper.txt"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        }
+    ]
+}
